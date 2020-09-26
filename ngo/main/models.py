@@ -23,6 +23,9 @@ class Requirements(models.Model):
     initial_count = models.FloatField()
     donation_count = models.FloatField(default=0)
 
+    def __str__(self):
+        return self.name
+
 
 class Donated(models.Model):
     requirements_name = models.ForeignKey(

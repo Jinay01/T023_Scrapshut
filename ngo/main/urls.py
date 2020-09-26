@@ -4,8 +4,8 @@ from . import views
 app_name = 'main'
 
 urlpatterns = [
-    path('ngo/<str:pk>/summary/', views.ngo_summary, name='ngo_summary'),
-    path('ngo/<str:pk>/tabular/', views.ngo_tabular, name='ngo_tabular'),
-    path('ngo/<str:pk>/requirementform/',
-         views.ngo_requirementform, name='ngo_requirement'),
+    path('admin/<str:pk>', views.admin, name='admin'),
+    path('requirementform/<str:pk>', views.requirementform, name='requirementform'),
+    path('summary/<str:pk>', views.summary, name='summary'),
+    path('tabular/<str:pk>', views.tabular, name='tabular'),
 ]

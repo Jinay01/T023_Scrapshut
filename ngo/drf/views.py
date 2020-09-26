@@ -18,3 +18,10 @@ def donor(request):
     donor = Donor.objects.all()
     context = DonorSerializer(donor, many=True)
     return Response(context.data)
+
+
+@api_view(['GET'])
+def user(request):
+    user = User.objects.all()
+    context = UserSerializer(user, many=True)
+    return Response(context.data)
