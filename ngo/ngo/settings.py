@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     # apps
     'login',
     'main',
+    'drf',
+    # other stuff
+    'rest_framework',
 ]
 
 AUTH_USER_MODEL = 'login.User'

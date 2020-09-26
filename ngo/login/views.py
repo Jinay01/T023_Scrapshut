@@ -31,7 +31,7 @@ class NgoSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login_auth(self.request, user)
-        return redirect('home')
+        return redirect('main:ngo_tabular', user.id)
 
 
 class DonorSignUpView(CreateView):
@@ -49,6 +49,10 @@ class DonorSignUpView(CreateView):
         return redirect('home')
 
 
+def index(request):
+    return render(request, 'login/index.html')
+
+
 def login(request):
     if request.method == 'POST':
         name = request.POST.get('Username')
@@ -57,7 +61,7 @@ def login(request):
         if user is not None:
             if user.is_ngo:
                 login_auth(request, user)
-                return redirect('ngo')
+                return redirect('main:ngo_tabular')
             else:
                 messages.info(request, 'Ngo is not registered')
             if user.is_donor:

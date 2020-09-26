@@ -1,10 +1,14 @@
 from django.db import models
-from login.models import Ngo
+from login.models import *
 
 # Create your models here.
 
+# class VerifiedManager(models.Manager):
+#     def get_queryset(self):
+#         return super(PublishedManager, self).get_queryset().filter(ngo.is_verified=True)
 
-class requirements(models.Model):
+
+class Requirements(models.Model):
     category = [
         ('medicine', 'medicine'),
         ('equipment', 'equipment'),
@@ -16,4 +20,13 @@ class requirements(models.Model):
     # category dropdown hase jema upar mentioned category select thase
     category = models.CharField(max_length=20, choices=category)
     # ketli quantity joie che
+    initial_count = models.FloatField()
+    donation_count = models.FloatField(default=0)
+
+
+class Donated(models.Model):
+    requirements_name = models.ForeignKey(
+        Requirements, null=True, blank=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        Donor, null=True, blank=True, on_delete=models.CASCADE)
     count = models.IntegerField()

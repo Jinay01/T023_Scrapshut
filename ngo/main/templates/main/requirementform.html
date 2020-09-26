@@ -1,0 +1,26 @@
+{% extends 'main/admin.html' %}
+
+{% block content %}
+
+<section id="form">
+    <form action="">
+        <div style="margin: 50px 20% 0px 20%; width:60%" class="form-group">
+            {{form.name}}
+        </div>
+
+        <div style="margin: 50px 20% 0px 20%; width:60%" class="form-group">
+            {{form.category}}
+        </div>
+
+        <div style="margin: 30px 20% 0px 20%; width:60%" class="form-group">
+            {{form.initial_count}}
+        </div>
+
+        <div style="margin: 30px 20% 30px 20%; width:60%" class="form-group">
+            <input type="submit" name="submit" class="btn-btn-primary" value="Create Requirement">
+        </div>
+
+    </form>
+</section>
+
+{% endblock %}

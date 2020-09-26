@@ -7,12 +7,12 @@ from .models import *
 
 class NgoSignUpForm(UserCreationForm):
 
-    contact_number = forms.FloatField(widget=forms.NumberInput(attrs={'class': 'form-control',
-                                                                      'class': 'bg-white',
-                                                                      'class': 'border-left-0',
-                                                                      'class': 'border-md',
-                                                                      'class': 'pl-3',
-                                                                      'placeholder': 'Contact Number'}))
+    contact_number = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'form-control',
+                                                                        'class': 'bg-white',
+                                                                        'class': 'border-left-0',
+                                                                        'class': 'border-md',
+                                                                        'class': 'pl-3',
+                                                                        'placeholder': 'Contact Number'}))
 
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control',
                                                             'class': 'bg-white',
@@ -71,7 +71,7 @@ class NgoSignUpForm(UserCreationForm):
         ngo = Ngo.objects.create(user=user)
         ngo.email = self.cleaned_data.get('email')
         ngo.contact_number = self.cleaned_data.get('contact_number')
-        ngo.owner_name = self.cleaned_data.get('owner_name')
+        ngo.ngo_name = self.cleaned_data.get('ngo_name')
         ngo.address = self.cleaned_data.get('address')
         ngo.state = self.cleaned_data.get('state')
         if self.cleaned_data.get('logo') is not None:
@@ -89,12 +89,12 @@ class DonorSignUpForm(UserCreationForm):
                                                               'class': 'border-md',
                                                               'class': 'pl-3',
                                                               'placeholder': 'Name     '}))
-    contact_number = forms.FloatField(widget=forms.NumberInput(attrs={'class': 'form-control',
-                                                                      'class': 'bg-white',
-                                                                      'class': 'border-left-0',
-                                                                      'class': 'border-md',
-                                                                      'class': 'pl-3',
-                                                                      'placeholder': 'Contact Number'}))
+    contact_number = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'form-control',
+                                                                        'class': 'bg-white',
+                                                                        'class': 'border-left-0',
+                                                                        'class': 'border-md',
+                                                                        'class': 'pl-3',
+                                                                        'placeholder': 'Contact Number'}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control',
                                                             'class': 'bg-white',
                                                             'class': 'border-left-0',
@@ -134,6 +134,7 @@ class DonorSignUpForm(UserCreationForm):
         user.id_verified = True
         user.save()
         donor = Donor.objects.create(user=user)
+        donor.name_user = self.cleaned_data.get('name_user')
         donor.contact_number = self.cleaned_data.get('contact_number')
         donor.email = self.cleaned_data.get('email')
         # donor.address = self.cleaned_data.get('address')

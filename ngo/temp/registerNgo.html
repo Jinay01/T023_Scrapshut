@@ -30,6 +30,25 @@
                 <form action="#" method="POST">
                     {% csrf_token %}
                     <div class="row">
+                        <!-- Profile Picture -->
+
+
+                        <!-- So guys this profile picture ka section is new...and there is one input submit type button also
+                            which i have commented out...uncomment if you need -->
+
+
+
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <label style="margin-bottom: 0px; margin-top: 3px;">Choose A Profile: Picture:</label>
+                                <!-- <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-user text-muted"></i>
+                                </span> -->
+                            </div>
+                            <input style="margin-left:-50px ; margin-top:-4px" id="img" type="file" name="img"
+                                placeholder="img" class="form-control  border-md" accept="image/*">
+                            <!--<input type="submit">-->
+                        </div>
 
                         <!-- Owner Name -->
                         <div class="input-group col-lg-12 mb-4">

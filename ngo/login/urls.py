@@ -5,7 +5,7 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name="home"),
-
+    path('index/', views.index, name='index'),
     # registration and login
     path('ngo_signup', views.NgoSignUpView.as_view(), name='ngo_signup'),
     path('donor_signup', views.DonorSignUpView.as_view(), name='donor_signup'),
