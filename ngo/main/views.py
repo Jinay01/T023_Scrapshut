@@ -2,8 +2,22 @@ from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import *
 from .forms import RequirementsForm
-from . import decorators
+from django.contrib.auth.decorators import user_passes_test, login_required
 # Create your views here.
+
+ngo_required = user_passes_test(lambda user: user.is_ngo, login_url='login')
+donor_required = user_passes_test(
+    lambda user: user.is_donor, login_url='login')
+
+
+def ngo_user_required(view_func):
+    decorated_view_func = login_required(ngo_required(view_func))
+    return decorated_view_func
+
+
+def donor_user_required(view_func):
+    decorated_view_func = login_required(donor_required(view_func))
+    return decorated_view_func
 
 
 def admin(request, pk):
@@ -57,30 +71,49 @@ def requirementform(request, pk):
 
 
 def summary(request, pk):
+    print(pk)
     id = pk
+    ngos = Ngo.objects.get(user_id=id)
+    # print(ngo)
+    requirements = Requirements.objects.filter(ngo=ngos)
+    print(requirements)
+    donated = Donate.objects.all()
+    for i in donated:
+        i.requirements
+
     context = {'id': id}
     return render(request, 'main/summary.html', context)
 
 
+@ngo_user_required
 def tabular(request, pk):
     id = pk
-    context = {'id': id}
+    ngos = Ngo.objects.get(user_id=id)
+    requirements = Requirements.objects.filter(ngo=ngos)
+
+    # @register.filter(name='subtract')
+    # def subtract(value, arg):
+    #     return value - arg
+    # print(requirements)
+    context = {'id': id, 'requirements': requirements}
     return render(request, 'main/tabular.html', context)
 
-# def user_requirements(request):
-#     object_list = requirements.objects.all()
-#     paginator = Paginator(object_list, 6)
-#     page = request.GET.get('page')
 
-#     try:
-#         posts = paginator.page(page)
-#     except PageNotAnInteger:
-#         posts = paginator.page(1)
-#     except EmptyPage:
-#         posts = paginator.page(paginator.num_pages)
+@donor_user_required
+def user_requirements(request, pk):
+    object_list = Requirements.objects.all()
+    paginator = Paginator(object_list, 6)
+    page = request.GET.get('page')
 
-#     context = {'page': page, 'posts': posts}
-#     return render(request, 'main/user.html', context)
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+
+    context = {'page': page, 'posts': posts}
+    return render(request, 'main/user.html', context)
 
 
 # def ngo_summary(request, pk):

@@ -23,13 +23,34 @@ class Requirements(models.Model):
     initial_count = models.FloatField()
     donation_count = models.FloatField(default=0)
 
+    # def get_pending(self):
+    #     return self.initial_count - self.donation_count
+
     def __str__(self):
         return self.name
 
 
-class Donated(models.Model):
+# class Donated(models.Model):
+#     requirements_name = models.ForeignKey(
+#         Requirements, null=True, blank=True, on_delete=models.CASCADE)
+#     user = models.ForeignKey(
+#         Donor, null=True, blank=True, on_delete=models.CASCADE)
+#     user = models.ForeignKey(
+#         Donor, null=True, blank=True, on_delete=models.CASCADE)
+#     count = models.IntegerField()
+
+#     def __str__(self):
+#         return str(self.requirements_name)
+
+
+class Donate(models.Model):
     requirements_name = models.ForeignKey(
         Requirements, null=True, blank=True, on_delete=models.CASCADE)
+    ngo = models.ForeignKey(
+        Ngo, null=True, blank=True, on_delete=models.CASCADE)
     user = models.ForeignKey(
         Donor, null=True, blank=True, on_delete=models.CASCADE)
     count = models.IntegerField()
+
+    def __str__(self):
+        return str(self.requirements_name)

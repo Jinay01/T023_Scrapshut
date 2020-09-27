@@ -46,7 +46,7 @@ class DonorSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login_auth(self.request, user)
-        return redirect('home')
+        return redirect('login')
 
 
 def index(request):
@@ -66,7 +66,7 @@ def login(request):
                 messages.info(request, 'Ngo is not registered')
             if user.is_donor:
                 login_auth(request, user)
-                return redirect('donor')
+                return redirect('main:user', user.id)
             else:
                 messages.info(request, 'User is not registered')
 
@@ -77,11 +77,11 @@ def login(request):
     return render(request, 'login/login.html', context)
 
 
-def ngo(request):
-    context = {}
-    return render(request, 'login/ngo.html', context)
+# def ngo(request):
+#     context = {}
+#     return render(request, 'login/ngo.html', context)
 
 
-def donor(request):
-    context = {}
-    return render(request, 'login/donor.html', context)
+# def donor(request):
+#     context = {}
+#     return render(request, 'login/donor.html', context)
