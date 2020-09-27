@@ -45,14 +45,13 @@
 
 
 <body style="text-align: center; justify-content: center; background: url(images/background.jpg);">
-    <img style="height: 200px; width: 200px; margin-top: 50px;" src="images/random.jpg" class="rounded mx-auto d-block"
-        alt="...">
-    <p style="margin: 50px 20% 0px 20%;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio natus
+    <img style="height: 200px; width: 200px; margin-top: 50px;" src="{{request.user.ngo.logo.url}}"
+        class="rounded mx-auto d-block" alt="...">
+    <p style="margin: 50px 20% 0px 20%;"> Lorem ipsum dolor sit amet:url(images/background.jpg)dipisicing elit.
+        Distinctio natus
         harum officiis voluptatum voluptates,
         ipsa provident at libero cum obcaecati alias, laborum commodi minus hic. Eaque repudiandae quisquam amet ipsam!
-    </p>
-    <!-- Form section -->
-
+    </p> Demonstrate your organization’s values and commitment to your community by partnering with The First Funds.
     {% block content %}
 
     {% endblock %}

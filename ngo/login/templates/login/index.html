@@ -29,11 +29,12 @@
             </button>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Stories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Donation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#stories">Stories</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#">Projects</a></li> -->
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+
                 </ul>
 
             </div>
@@ -89,24 +90,23 @@
                         veritatis eligendi
                         iste et ut adipisci, dolorem corporis.
                     </p>
-                    <a href='{% url "login" %}' class='b class=' b class='b class=' btn hero-btn animate__animated
-                        animate__backInUp'>
+                    <a href='{% url "login" %}' class='btn hero-btn animate__animated animate__backInUp'>
                         Login
                     </a>
                 </div>
             </div>
             <!-- End of slide 1-->
-            <a class="carousel-control-prev" href="#herocarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon fas fa-chevron-left" aria-hidden="true">
-                    <span class="sr-only">Previous</span>
-                </span>
-            </a>
-        </div>
-        <a class="carousel-control-next" href="#herocarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon fas fa-chevron-right" aria-hidden="true">
-                <span class="sr-only">Next</span>
-            </span>
-        </a>
+            <!-- <a class="carousel-control-prev" href="#herocarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon fas fa-chevron-left" aria-hidden="true">
+          <span class="sr-only">Previous</span>
+        </span>
+      </a>
+    </div>
+    <a class="carousel-control-next" href="#herocarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon fas fa-chevron-right" aria-hidden="true">
+        <span class="sr-only">Next</span>
+      </span>
+    </a> -->
         </div>
 
         </div>
@@ -116,7 +116,7 @@
 
 
     <!-- About us -->
-    <section class="mt-5">
+    <section class="mt-5" id="about">
         <div class='container'>
             <div class="row justify-content-center mb-5">
                 <div class="col-md-8 text-center heading-section">
@@ -139,19 +139,19 @@
                         <li class="nav-item text-left">
                             <a class="nav-link py-4" data-toggle="tab" href="#about-4">Our Vision</a>
                         </li>
-                        <li class="nav-item text-left">
-                            <a class="nav-link py-4" data-toggle="tab" href="#about-5">Our Mandate</a>
-                        </li>
-                        <li class="nav-item text-left">
-                            <a class="nav-link py-4" data-toggle="tab" href="#about-6">Our Plans</a>
-                        </li>
+                        <!-- <li class="nav-item text-left">
+              <a class="nav-link py-4" data-toggle="tab" href="#about-5">Our Mandate</a>
+            </li>
+            <li class="nav-item text-left">
+              <a class="nav-link py-4" data-toggle="tab" href="#about-6">Our Plans</a>
+            </li> -->
                     </ul>
                 </div>
                 <!--  -->
                 <div class="col-md-8">
                     <div class="tab-content">
                         <div class="tab-pane container p-0 active" id="about-1">
-                            <div class="img" style="background-image:url(images/random.jpg);"></div>
+                            <div class="img" style="background-image:url(images/aboutus.jpeg);"></div>
                             <h3><a href="#">About Us</a></h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis natus! Modi eaque
                                 maxime
@@ -161,7 +161,7 @@
                         </div>
                         <!--  -->
                         <div class="tab-pane container p-0 " id="about-2">
-                            <div class="img" style="background-image:url(images/logo.png);"></div>
+                            <div class="img" style="background-image:url(images/begin.jpeg);"></div>
                             <h3><a href="#">Our Beginning</a></h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis natus! Modi eaque
                                 maxime
@@ -174,7 +174,7 @@
 
                         <!--  -->
                         <div class="tab-pane container p-0 " id="about-3">
-                            <div class="img" style="background-image:url(images/random.jpg);"></div>
+                            <div class="img" style="background-image:url(images/mission.jpeg);"></div>
                             <h3><a href="#">Our Mission</a></h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis natus! Modi eaque
                                 maxime
@@ -186,7 +186,7 @@
                         </div>
                         <!--  -->
                         <div class="tab-pane container p-0 " id="about-4">
-                            <div class="img" style="background-image:url(images/random.jpg);"></div>
+                            <div class="img" style="background-image:url(images/vision.jpeg);"></div>
                             <h3><a href="#">Our Vision</a></h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis natus! Modi eaque
                                 maxime
@@ -232,7 +232,7 @@
     <!-- end about us -->
 
     <!-- Stories -->
-    <section class='mt-3'>
+    <section class='mt-3' id="stories">
         <div class='stories'>
             <div class="container">
                 <div class="section-title text-center">
@@ -295,10 +295,57 @@
         </div>
       </div>
     <!--  -->
-    <!-- 
-    </div>
-  </section>  -->
 
+    </div>
+    </section> -->
+
+    <!-- FOOTER -->
+    <section class="bg-dark">
+        <div class="container text-white text-center py-5">
+            <p class="lead">
+                JOIN OUR NEWSLETTER FOR UPDATES
+            </p>
+            <div class="row justify-content-center">
+                <div class="col-10 col-sm-8 col-md-6 col-lg-4">
+                    <form action="" class="form-inline">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Your Email">
+                            <div class="input-group-append">
+                                <button class="btn btn-info">JOIN NOW</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: #1f1f1f;">
+        <ul class="nav text-center justify-content-center">
+            <li class="nav-item ">
+                <a href="#about" class="nav-link text-white">
+                    ABOUT
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a href="#stories" class="nav-link text-white">
+                    STORIES
+                </a>
+            </li>
+            <!-- <li class="nav-item ">
+        <a href="#" class="nav-link text-white">
+          PROJECT
+        </a>
+      </li> -->
+            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+            <!-- <li class="nav-item ">
+        <a href="#" class="nav-link text-white">
+          DONATION
+        </a>
+      </li> -->
+        </ul>
+
+    </section>
 
 
 
@@ -318,6 +365,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
+    <script src="alert.js"></script>
 </body>
 
 </html>

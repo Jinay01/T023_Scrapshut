@@ -1,7 +1,7 @@
 
-
 # Create your views here.
-
+from django.http import HttpResponse
+from django.shortcuts import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.contrib.auth import login as login_auth
 from django.views.generic import CreateView
@@ -53,6 +53,7 @@ def index(request):
     return render(request, 'login/index.html')
 
 
+# @unauthenticated_user
 def login(request):
     if request.method == 'POST':
         name = request.POST.get('Username')
@@ -75,6 +76,11 @@ def login(request):
 
     context = {}
     return render(request, 'login/login.html', context)
+
+
+def logoutUser(request):
+    logout(request)
+    return HttpResponseRedirect('/index/')
 
 
 # def ngo(request):

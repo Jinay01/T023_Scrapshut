@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +14,7 @@
 
     <title>Donation Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="user.css">
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
     <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
 
 </head>
@@ -22,7 +23,7 @@
     <!-- Constant Nav -->
     <style>
         .nav-bg {
-            background: rgba(20, 54, 1, 0.6);
+            background: #247ba0;
         }
 
         .navbar-nav .nav-link {
@@ -43,7 +44,7 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
                     <li class="nav-item text-white"><button class="btn btn-outline-primary btn-lg">
-                            <a href='index.html' class="text-white">
+                            <a href='{% url "logout" %}' class="text-white">
                                 Logout
                                 <i class="fa fa-sign-out ml-1" aria-hidden="true"></i>
                             </a>
@@ -76,24 +77,28 @@
                         <div class="flip-card">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front">
-                                    <img src="images/random.jpg" alt="random" style="width:220px;height:170px;">
+                                    <img src="{% static 'images/donor.jpg' %}" alt="random"
+                                        style="width:220px;height:170px;">
                                 </div>
                                 <div class="flip-card-back">
-                                    <p>Product required</p>
-                                    <p>Cost of product</p>
-                                    <p>NGO Name</p>
-                                    <a href="#" class="donation text-capitalize">Donate Now</a>
+                                    <p>{{post.name}}</p>
+                                    <p>{{post.category}}</p>
+                                    <!-- <p>{{post.initial_count}}</p> -->
+                                    <p>{{post.ngo.ngo_name}}</p>
+                                    <a href="{% url 'donation' post.name post.ngo.ngo_name%}"
+                                        class="donation text-capitalize">Donate
+                                        Now</a>
                                 </div>
                             </div>
                         </div>
 
-                    </div>
+                    </div class="my-2">
                     <h4 class="text-capitalize text-center my-2">
-                        Project 1
+                        {{post.name}}
                     </h4>
-                    <h6 class="text-center">
+                    <!-- <h6 class="text-center">
                         Specifications
-                    </h6>
+                    </h6> -->
                 </div>
                 {% endfor %}
             </div>

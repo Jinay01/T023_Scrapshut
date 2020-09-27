@@ -1,6 +1,6 @@
 
         body {
-            background-color: #F3EBF6;
+            background-color: #9adcec;
             font-family: 'Ubuntu', sans-serif;
         }
         
@@ -15,7 +15,7 @@
         
         .sign {
             padding-top: 40px;
-            color: #8C55AA;
+            color: #17255a;
             font-family: 'Ubuntu', sans-serif;
             font-weight: bold;
             font-size: 23px;
@@ -75,7 +75,7 @@
           cursor: pointer;
             border-radius: 5em;
             color: #fff;
-            background: linear-gradient(to right, #9C27B0, #E040FB);
+            background: linear-gradient(to right, #247ba0, #9adcec);
             border: 0;
             padding-left: 40px;
             padding-right: 40px;
@@ -89,19 +89,20 @@
         
         .forgot {
             text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-            color: #E1BEE7;
+            color: #9d5c63;
             padding-top: 15px;
+            margin-top: 5px;
         }
         .forgot2 {
             text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-            color: #E1BEE7;
+            color: #9d5c63;
             padding-top: 15px;
             margin-top: -20px;
         }
         
         a {
             text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-            color: #E1BEE7;
+            color: #eecf6d;
             text-decoration: none
         }
         
@@ -110,3 +111,8 @@
                 border-radius: 0px;
             }
         }
+            
+    
+    
+    
+    

@@ -130,7 +130,11 @@ def user_requirements(request, pk):
 # def ngo_requirementform(request, pk):
 #
 
-#     else:
-#         form = RequirementsForm()
-#     context = {'form': form}
-#     return render(request, 'main/requirementform.html', context)
+
+def donation(request, pk, pk2):
+    req = Requirements.objects.filter(name=pk).get(ngo=pk2)
+    print(req)
+    context = {}
+    return render(request, 'main/donation.html', context)
+
+
