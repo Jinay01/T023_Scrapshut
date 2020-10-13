@@ -8,35 +8,35 @@ from .models import *
 class NgoSignUpForm(UserCreationForm):
 
     contact_number = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'form-control',
-                                                                        'class': 'bg-white',
-                                                                        'class': 'border-left-0',
-                                                                        'class': 'border-md',
-                                                                        'class': 'pl-3',
+                                                                        # 'class': 'bg-white',
+                                                                        # 'class': 'border-left-0',
+                                                                        # 'class': 'border-md',
+                                                                        # 'class': 'pl-3',
                                                                         'placeholder': 'Contact Number'}))
 
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control',
-                                                            'class': 'bg-white',
-                                                            'class': 'border-left-0',
-                                                            'class': 'border-md',
+                                                            # 'class': 'bg-white',
+                                                            # 'class': 'border-left-0',
+                                                            # 'class': 'border-md',
                                                             'placeholder': 'E-mail     '}))
 
     ngo_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control',
-                                                                      'class': 'bg-white',
-                                                                      'class': 'border-left-0',
-                                                                      'class': 'border-md',
+                                                             #   'class': 'bg-white',
+                                                             #   'class': 'border-left-0',
+                                                             #   'class': 'border-md',
                                                                       'placeholder': 'Name of NGO'}))
 
     state = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control',
-                                                          'class': 'bg-white',
-                                                          'class': 'border-left-0',
-                                                          'class': 'border-md',
-                                                          'class': 'pl-3',
+                                                          #   'class': 'bg-white',
+                                                          #   'class': 'border-left-0',
+                                                          #   'class': 'border-md',
+                                                          #   'class': 'pl-3',
                                                           'placeholder': 'State'}))
     address = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control',
-                                                            'class': 'bg-white',
-                                                            'class': 'border-left-0',
-                                                            'class': 'border-md',
-                                                            'class': 'pl-3',
+                                                            # 'class': 'bg-white',
+                                                            # 'class': 'border-left-0',
+                                                            # 'class': 'border-md',
+                                                            # 'class': 'pl-3',
                                                             'placeholder': 'Address'}))
     # logo
     logo = forms.ImageField(required=False)
@@ -44,19 +44,19 @@ class NgoSignUpForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['username'].widget.attrs.update({'class': 'form-control',
-                                                     'class': 'bg-white',
-                                                     'class': 'border-left-0',
-                                                     'class': 'border-md',
+                                                     #  'class': 'bg-white',
+                                                     #  'class': 'border-left-0',
+                                                     #  'class': 'border-md',
                                                      'placeholder': 'Username'})
         self.fields['password1'].widget.attrs.update({'class': 'form-control',
-                                                      'class': 'bg-white',
-                                                      'class': 'border-left-0',
-                                                      'class': 'border-md',
+                                                      #   'class': 'bg-white',
+                                                      #   'class': 'border-left-0',
+                                                      #   'class': 'border-md',
                                                       'placeholder': 'Password'})
         self.fields['password2'].widget.attrs.update({'class': 'form-control',
-                                                      'class': 'bg-white',
-                                                      'class': 'border-left-0',
-                                                      'class': 'border-md',
+                                                      #   'class': 'bg-white',
+                                                      #   'class': 'border-left-0',
+                                                      #   'class': 'border-md',
                                                       'placeholder': 'Re-enter Password'})
 
     class Meta(UserCreationForm.Meta):
@@ -84,21 +84,21 @@ class NgoSignUpForm(UserCreationForm):
 
 class DonorSignUpForm(UserCreationForm):
     name_user = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control',
-                                                              'class': 'bg-white',
-                                                              'class': 'border-left-0',
-                                                              'class': 'border-md',
-                                                              'class': 'pl-3',
+                                                              #   'class': 'bg-white',
+                                                              #   'class': 'border-left-0',
+                                                              #   'class': 'border-md',
+                                                              #   #   'class': 'pl-3',
                                                               'placeholder': 'Name     '}))
     contact_number = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'form-control',
-                                                                        'class': 'bg-white',
-                                                                        'class': 'border-left-0',
-                                                                        'class': 'border-md',
-                                                                        'class': 'pl-3',
+                                                                        # 'class': 'bg-white',
+                                                                        # 'class': 'border-left-0',
+                                                                        # 'class': 'border-md',
+                                                                        # 'class': 'pl-3',
                                                                         'placeholder': 'Contact Number'}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control',
-                                                            'class': 'bg-white',
-                                                            'class': 'border-left-0',
-                                                            'class': 'border-md',
+                                                            # 'class': 'bg-white',
+                                                            # 'class': 'border-left-0',
+                                                            # 'class': 'border-md',
                                                             'placeholder': 'E-mail     '}))
     # state = forms.CharField()
     # address = forms.CharField()
@@ -108,19 +108,19 @@ class DonorSignUpForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['username'].widget.attrs.update({'class': 'form-control',
-                                                     'class': 'bg-white',
-                                                     'class': 'border-left-0',
-                                                     'class': 'border-md',
+                                                     #  'class': 'bg-white',
+                                                     #  'class': 'border-left-0',
+                                                     #  'class': 'border-md',
                                                      'placeholder': 'Username'})
         self.fields['password1'].widget.attrs.update({'class': 'form-control',
-                                                      'class': 'bg-white',
-                                                      'class': 'border-left-0',
-                                                      'class': 'border-md',
+                                                      #   'class': 'bg-white',
+                                                      #   'class': 'border-left-0',
+                                                      #   'class': 'border-md',
                                                       'placeholder': 'Password'})
         self.fields['password2'].widget.attrs.update({'class': 'form-control',
-                                                      'class': 'bg-white',
-                                                      'class': 'border-left-0',
-                                                      'class': 'border-md',
+                                                      #   'class': 'bg-white',
+                                                      #   'class': 'border-left-0',
+                                                      #   'class': 'border-md',
                                                       'placeholder': 'Re-enter Password'})
 
     class Meta(UserCreationForm.Meta):
