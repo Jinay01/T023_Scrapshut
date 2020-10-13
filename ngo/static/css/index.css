@@ -29,8 +29,8 @@ body{
     top:0;
     width:130%;
     height:95%;
-    background: url("images/pexels-pixabay-461049.jpg") no-repeat center top;
-    background: linear gradient(to right,#247ba0,#9ed3e0);
+    background: url("static/images/index.jpg") no-repeat center top;
+    background:#247ba0;
     z-index: 0;
     border-radius:0 0 50% 50%;
     transform:translateX(-50%) rotate(0deg);
@@ -42,8 +42,8 @@ body{
     top:0;
     width: 130%;
     height: 96%;
-    background: #17255a;
-    opacity: 0.3;
+    background:#247ba0;
+    opacity: 0.7;
     z-index: 0;
     border-radius: 0 0 50% 50%;
     transform: translateX(-50%)translateY(18px)rotate(2deg);
@@ -63,13 +63,15 @@ body{
     color:#fff;
     margin-bottom: 30px;
     font-size: 48px;
-    font-weight:bold;
+    font-weight: 1200;
 }
 #hero p{
     width:80%;
     animation-delay: 0.4s;
     margin: 0 auto 30px auto;
     color: #fff;
+    font-weight: 900;
+
 }
 #hero .carousel-control-prev,#hero .carousel-control-next{
     width:10%;
