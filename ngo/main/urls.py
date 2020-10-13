@@ -10,6 +10,5 @@ urlpatterns = [
     path('tabular/<str:pk>', views.tabular, name='tabular'),
     path('user/<str:pk>', views.user_requirements, name='user'),
     path('donation/<str:pk>/<str:pk2>/', views.donation, name='donation'),
-    path('logout', views.logoutUser, name='logout'),
-
+    # path('logout', views.logoutUser, name='logout'),
 ]

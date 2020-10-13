@@ -80,7 +80,7 @@ def login(request):
 
 def logoutUser(request):
     logout(request)
-    return HttpResponseRedirect('/index/')
+    return redirect('index')
 
 
 # def ngo(request):

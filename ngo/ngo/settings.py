@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'drf',
     # other stuff
     'rest_framework',
-    'mathfilters'
+    # 'mathfilters',
 ]
 
 AUTH_USER_MODEL = 'login.User'

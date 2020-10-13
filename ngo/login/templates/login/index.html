@@ -44,6 +44,8 @@
 
     <!-- Hero Section -->
     <section id="hero" class="d-flex justify-content-center align-items-center">
+        <img style="height: 200px; width: 200px; margin-top: 50px;" src="{% static 'images/index.jpg' %}"
+            class="rounded mx-auto d-block" alt="...">
         <div id="heroCarousel" class="container carousel carousel-fade" data-ride="carousel">
             <!-- Slide 1 -->
             <div class="carousel-item active">
@@ -151,7 +153,10 @@
                 <div class="col-md-8">
                     <div class="tab-content">
                         <div class="tab-pane container p-0 active" id="about-1">
-                            <div class="img" style="background-image:url(images/aboutus.jpeg);"></div>
+                            <div class="img" style="background-image:url(images/aboutus.jpeg);"><img
+                                    style="height: 200px; width: 200px; margin-top: 50px;"
+                                    src="{% static 'images/begin.jpeg' %}" class="rounded mx-auto d-block" alt="...">
+                            </div>
                             <h3><a href="#">About Us</a></h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis natus! Modi eaque
                                 maxime
@@ -161,7 +166,10 @@
                         </div>
                         <!--  -->
                         <div class="tab-pane container p-0 " id="about-2">
-                            <div class="img" style="background-image:url(images/begin.jpeg);"></div>
+                            <div class="img" style="background-image:url(images/begin.jpeg);"><img
+                                    style="height: 200px; width: 200px; margin-top: 50px;"
+                                    src="{% static 'images/mission.jpeg' %}" class="rounded mx-auto d-block" alt="...">
+                            </div>
                             <h3><a href="#">Our Beginning</a></h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, omnis natus! Modi eaque
                                 maxime
@@ -280,12 +288,10 @@
                     <!--  -->
                 </div>
             </div>
-        </div>
-    </section>
 
 
-    <!-- End of stories -->
-    <!-- Projects Section
+            <!-- End of stories -->
+            <!-- Projects Section
   <section class="project py-5">
     <div class="container">
       <div class="row my-3">
@@ -296,76 +302,73 @@
       </div>
     <!--  -->
 
-    </div>
-    </section> -->
-
-    <!-- FOOTER -->
-    <section class="bg-dark">
-        <div class="container text-white text-center py-5">
-            <p class="lead">
-                JOIN OUR NEWSLETTER FOR UPDATES
-            </p>
-            <div class="row justify-content-center">
-                <div class="col-10 col-sm-8 col-md-6 col-lg-4">
-                    <form action="" class="form-inline">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Your Email">
-                            <div class="input-group-append">
-                                <button class="btn btn-info">JOIN NOW</button>
+        </div>
+        <section class="bg-dark">
+            <div class="container text-white text-center py-5">
+                <p class="lead">
+                    JOIN OUR NEWSLETTER FOR UPDATES
+                </p>
+                <div class="row justify-content-center">
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-4">
+                        <form action="" class="form-inline">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Your Email">
+                                <div class="input-group-append">
+                                    <button class="btn btn-info">JOIN NOW</button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section style="background-color: #1f1f1f;">
-        <ul class="nav text-center justify-content-center">
-            <li class="nav-item ">
-                <a href="#about" class="nav-link text-white">
-                    ABOUT
-                </a>
-            </li>
-            <li class="nav-item ">
-                <a href="#stories" class="nav-link text-white">
-                    STORIES
-                </a>
-            </li>
-            <!-- <li class="nav-item ">
+        <section style="background-color: #1f1f1f;">
+            <ul class="nav text-center justify-content-center">
+                <li class="nav-item ">
+                    <a href="#about" class="nav-link text-white">
+                        ABOUT
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a href="#stories" class="nav-link text-white">
+                        STORIES
+                    </a>
+                </li>
+                <!-- <li class="nav-item ">
         <a href="#" class="nav-link text-white">
           PROJECT
         </a>
       </li> -->
-            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
-            <!-- <li class="nav-item ">
+                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                <!-- <li class="nav-item ">
         <a href="#" class="nav-link text-white">
           DONATION
         </a>
       </li> -->
-        </ul>
+            </ul>
 
-    </section>
-
-
+        </section>
 
 
 
 
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
-    <script src="alert.js"></script>
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+        <script src="alert.js"></script>
 </body>
 
 </html>

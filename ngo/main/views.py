@@ -78,14 +78,14 @@ def summary(request, pk):
     requirements = Requirements.objects.filter(ngo=ngos)
     print(requirements)
     donated = Donate.objects.all()
-    for i in donated:
-        i.requirements
+    # for i in donated:
+    #     i.requirements
 
-    context = {'id': id}
+    context = {'id': id, 'donated': donated}
     return render(request, 'main/summary.html', context)
 
 
-@ngo_user_required
+@ ngo_user_required
 def tabular(request, pk):
     id = pk
     ngos = Ngo.objects.get(user_id=id)
@@ -99,7 +99,7 @@ def tabular(request, pk):
     return render(request, 'main/tabular.html', context)
 
 
-@donor_user_required
+@ donor_user_required
 def user_requirements(request, pk):
     object_list = Requirements.objects.all()
     paginator = Paginator(object_list, 6)
@@ -138,3 +138,6 @@ def donation(request, pk, pk2):
     return render(request, 'main/donation.html', context)
 
 
+# def logoutUser(request):
+#     logout(user)
+#     return redirect('/index/')
