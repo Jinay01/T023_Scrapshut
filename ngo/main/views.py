@@ -131,8 +131,8 @@ def user_requirements(request, pk):
 #
 
 
-def donation(request, pk, pk2):
-    req = Requirements.objects.filter(name=pk).get(ngo=pk2)
+def donation(request, pk):
+    req = Requirements.objects.get(id=pk)
     print(req)
     context = {}
     return render(request, 'main/donation.html', context)

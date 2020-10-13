@@ -85,8 +85,7 @@
                                     <p>{{post.category}}</p>
                                     <!-- <p>{{post.initial_count}}</p> -->
                                     <p>{{post.ngo.ngo_name}}</p>
-                                    <a href="{% url 'main:donation' post.name post.ngo.ngo_name%}"
-                                        class="donation text-capitalize">Donate
+                                    <a href="{% url 'main:donation' post.id%}" class="donation text-capitalize">Donate
                                         Now</a>
                                 </div>
                             </div>
