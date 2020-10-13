@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donation Page</title>
-    <link rel="stylesheet" href="registerUser.css">
+    <!-- <link rel="stylesheet" href="registerUser.css"> -->
     <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -14,7 +14,7 @@
 <body>
     <div class="container mt-5">
         <div class="jumbotron align-middle" style="background-color: #9fd7e6;">
-            <h2 class="display-4">The Good People</h2>
+            <h2 class="display-4">{{req.ngo}}</h2>
 
 
             <hr class="my-4">
@@ -23,10 +23,8 @@
                     <b>
                         <p class="lead">More Information about the NGO</p>
                     </b>
-                    <p>Address of the ngo is Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut mollitia
-                        eligendi qui quia enim
-                        nesciunt</p>
-                    <p>Item Required</p>
+                    <p>{{req.ngo.address}}</p>
+                    <p>Item Required {{req.name}}</p>
                     <p>Every donation would add up to a smile :)</p>
                     <div class="qty mt-5">
                         <style>
@@ -91,7 +89,7 @@
                                 width: 2%;
                             }
 
-                            nput::-webkit-outer-spin-button,
+                            input::-webkit-outer-spin-button,
                             input::-webkit-inner-spin-button {
                                 -webkit-appearance: none;
                                 margin: 0;
@@ -102,10 +100,15 @@
                             }
                         </style>
                         <form action="" method="POST">
-                            <span class="minus bg-dark">-</span>
+                            {% csrf_token %}
+                            <!-- <span class="minus bg-dark">-</span>
                             <input type="number" class="count" name="qty" value="1">
-                            <span class="plus bg-dark">+</span>
-                            <input type="submit" name="submit" class="btn btn-dark btn-lg mt-4" value="Donate">
+                            <span class="plus bg-dark">+</span> -->
+                            <!-- <input type="submit" name="submit"> -->
+                            {{form}}
+                            <input type="submit" name="submit" class="btn btn-primary form-control form-group col-lg-3">
+
+
                         </form>
 
                     </div>
@@ -117,7 +120,7 @@
                 </div>
                 <div class="col-md-4 ">
                     <div class="card " style="width: 18rem;">
-                        <img src="images/logo.png" class="card-img-top" alt="...">
+                        <img src="{{req.ngo.logo.url}}" class="card-img-top" alt="...">
                         <!-- <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div> -->

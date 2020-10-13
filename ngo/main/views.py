@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import *
-from .forms import RequirementsForm
+from .forms import *
 from django.contrib.auth.decorators import user_passes_test, login_required
 # Create your views here.
 
@@ -133,8 +133,16 @@ def user_requirements(request, pk):
 
 def donation(request, pk):
     req = Requirements.objects.get(id=pk)
-    print(req)
-    context = {}
+    form = Count()
+    if request.method == "POST":
+        form = Count(request.POST)
+        if form.is_valid():
+            donation = form.cleaned_data['donation_count']
+            form.save()
+    print(type(req))
+    print(req.name)
+    print(req.ngo)
+    context = {'req': req, 'form': form}
     return render(request, 'main/donation.html', context)
 
 

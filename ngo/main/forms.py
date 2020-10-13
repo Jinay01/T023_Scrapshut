@@ -16,3 +16,9 @@ class RequirementsForm(ModelForm):
     class Meta:
         model = Requirements
         fields = ['name', 'category', 'initial_count']
+
+
+class Count(ModelForm):
+    class Meta:
+        model = Requirements
+        fields = ['donation_count']
